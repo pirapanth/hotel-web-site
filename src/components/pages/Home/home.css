@@ -1,0 +1,8 @@
+.title-pic{
+    display:flex;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    bottom: 700px;
+    left: 50px;
+}

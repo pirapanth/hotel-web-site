@@ -1,0 +1,54 @@
+import React from 'react';
+import './experience.css';
+
+const images = [
+  'https://lh3.googleusercontent.com/pw/ABLVV87I33-OPFhRrOngJxYfW6BN6LXxfQVatyu6Zr8s5_61EOBopt7BSs16bwmYiTXJZnQT6Sv2Sb5B4ABA_yHQDP3aM6soKAuAmErAZWHATJH4nEjfRt_513iWcWwElzmyO0X28Jsr5JmuNYA3naSAJ6JkrbCO0HJ12uIFYHuKLIAkj78zfHaEcGM6LwJpNCUzBS7gGso7o9-CcE-7zh52vlCCqYIdGSxuQX1_mj2VjSEfvvJyNS1EHErNHYL-U1xQVcN-UojEFZ3vDX9IUCAIRDbtGiPeKtlRvdTbh6f_AqZ-D44kQTVrOiwbQERqOVsp-X48DwyrX7PDxL5EPNTVNFib4rLfI8Qyb6Mu0cqEFeSz7rSR0NgLAAvSnYKRLdVJLVoAKj3-DmoxBxv5KbMwCt0YR6y5yFe4zS_mhojWejLwniz60SrQwHRJiZMXLDXbYgbV8UR8yiFGdNW22E6Icos9pUB_DRGt3KBPOx4EEVccbja7baH2_ahuLCqEyHQJestYQIv1LnrCHpacULU0AwA7NOGgU_FzcyxjWC0Edy6e99J1gbbRw6eR3wL2eSDZ8jDo7rEAdTGPpsEGVI2XXL70sqa3SrBYGIW3j3edsHXhF6xoufbemrJKW4-nXAVLsh6X83S6EHB_cmLrCYvFfY5KH1bloS-m4cPObcQ4TVpGa-xG43VY6i4_6UAKSGTdOMIqSG-PrIDR6mdws1EourY-kqUj_l8N55EC-Xa1A2q5sv85GdgHC6UhOzp-pyt7WNUcbntNHVPMbwBUonAbGPXK0Rl5WrhNVXiPXeRxKWLqK_k908tyn4c2LdnHHumJLafO1FN4o_W-XMxce_8kgjE2QITNkmrtnQ2Fvpo1Ni1OjNa7FVghaeMTQym5L-ZX4N8tFsxceuziIyym1WlONP6LrHE=w1390-h928-s-no-gm?authuser=0',
+  'https://lh3.googleusercontent.com/pw/ABLVV86FDQiR5xzjooiJHz7to5vmr0DRnXLc-xojUb7cjRct3E7QtxIyrX18vZnzdOesgo2fiOskLnM0AaosnVGnsVmQi6Bu_a2bWX17OV0nyCjpfFqZm846FbunRmJJ0JhoT702UTmzSMTgIocEp_uVDZyMEIXHWNYKuyRG84Bk8U2ROH2htx81YwLt26YKC-OvbZRpGDJEB4er35AqSyzjt82OWOI4fT23XRFODp2fEQJpEe7iSNzIX1xpdMmSzcAVo08j6H0gFsJ7Nh9qwqf73rELmi6hLQIOSret6AU_IxfsymRtZaZc-wiEYm-SkOex4OuXexNOfQJyIA6mBY0iOlvJrXdon-MA37tHleeDQPqfS_lE3JwdUCZb89-Ta0hHpClMli8Jwd6a-0Ncd-83Y-CN4V2OAyUfbVs-xm40KqIEXDxk_FArX4iAimVPUF7PThGtT8YQ2EhOLuJnZ2PnT2bXHgbkvi34JEv7CcX819Pes45ZIMV14rkOb-ytBzoinZXmPWNcDYhIqDVwrvDgajRK3ibwapSwh4N2fPbJiuWhaDT8ggdkXzTUVVgqzDMBf9Ba2xyxn52jRQpWJ9ZQjYZHyDxzI6zgFZwMxaN3zQMtbYx7lLi7hLgK35LC0E5fF-18pe6gFEeXp5KIB5rivt-qKbRU1SMeGzq4_P7Mt15B2VhRLFulpcPtsZzH_7GCOvfFQPdpmCu3tk4ncj38JGPfLj_zhlI8zONacD9HFXLEFW_tvCs-iWi-r9PdCdgO_CeQBpxtm5oM9pz5k-uooyOUpP-KPTN56HWbJRFa5mueeg3AOETzNpfJyxryi5JCx1JktN0BSYKnXtS63SJWXndla4s86u5lwoBpPM38WxBNBTvNlY3PZ5-LTYHKhdYmJh8_3EAl-VW9NXmUCMmRH8ch5To=w1391-h928-s-no-gm?authuser=0',
+  'https://lh3.googleusercontent.com/pw/ABLVV86ZoAs0vMAcEdKLOWfkjNZj_jvhZFuvp1O9WJD5h-xBN9wj-GnQImLour9aSvN_1JesI6DiSG2UMQHkBlCzDMfeJAE6aA8HWFao8lr7r8kp06h8mkv37wnpl-5Vw_5gliMAasrtVnDcEFOfn3SgV8L2eCSxA76MMn5IDTm2-aTMNw4-8grw4scgwgF8yje4MVtIvYWCL4ahBJg4uIByo1a13Pj4fmYpBlcvtDQNXOfxSlMP1WjOJancsnEMHp7oZ6_vLhGtRi-a-yBI4s6TtZdnGoOTwGp6bInUz9UuUuaaJnPduyPI_4zBj0bk_skzcM9-KoLJYty9AzlGJbht7ypDEO1mTvS1RLgQY79woqPRDwN4mYTNOU3TzahcOjVrf1kuYNEE7bcU9VhxIG75WaW6amf46bfY78cqjnyO6YgPbipO-LdyT-02p6b4W2cLr75GcWyvnH7n4AnenyLBXc7JY5tBoy3TBfvbv_TT-1AexwTUAdFEHeggpjIq0SDn_8Xif3xTreSGZctsRXR7lq_ZmwzomrBQjUCsybYNuN-6VqPyAX6DMVPVFnI82QZOdMxFmanrJ8oKxXoRuVQf1uECwoFQCToqhj7UjrO9xw7PdBiaVThhSCvYB1WX4Hua3eKGYk2Tyi2Uk7WExz2ovtawCApkLDbMO7VNDBlmCas8K4IWnYs0cfLL_jtciEewSJDiIEhAt3JlW2gnTcJtoXnVaDvIc4MakjqK0OcgFvmahnx2O12AgnEc7fdVRw1sZm2lLRs8CJjlvlJSztDs2beHz8DATxZ3ScC2hVTDuXjF1-PyLM3qgjktX7NBm3b7JZCvqVXdTKbJQiHfbjiOOqeCkfIOCzSkAQdWokK3K8rz0YWEjhPhxiCenDVyLH8kWmFvFbCTyTfWXL6DHqiF7mkzaFw=w1391-h928-s-no-gm?authuser=0',
+  'https://lh3.googleusercontent.com/pw/ABLVV85bPIuMztQr_BwcyDmP1Hy1rv-QqmfQG0j9XHedaDyBJBMnhY0JG9sGqq6BEp_-FZ6RykfCjJqO6wJNN5hjbmf5xCx8e3PG440EUaP_Ry1i2Khem727Q9R7xDyJ2e8Z32Ij3o1AIE5faymQLkfGxYOXuC09q1AxJvoYgy3EHG8as3wIyt4EDD2sb3_I8M1lepqVBvI-4nN870b1viGNLHQK4WbbnxN22ssndm-dmMftqFDs-PhTIQbvpWvtzNDMx3ZJbdtWX5XYF7-45zdlUkDQvpW5L6fVhjV9L9uKK8qv42yaBljMeNeyFbKfiM-5356-wYl8GiwcyUBRVqBig-nK_Pt-f2vXwdMWXhRxNXC7kTJdP8_tg7TEPY8CreBXSuZwA0Wc__XU4mjxlvxmZQGsbWvaKgUWmMq1kkj2oef9idQg4qL5m4Cj4LTtpyNaIV0fxIuhRQLD_jyDlMaGWXtNqiDFpvKcmNjggZp5mJq6vdriD5JHkvGKJCMdtY2qZjRXahHN78b5-bZdK1jiHPBHy9dmy624HeipGTE3hckiK6w1Am0Ti8pwbwKWnzOVQJn5xW5R22B8SMxHJ8vGc5bIfyaDDi6lOOlLrQOFoxKTG9tkNZtd3Ki-SFjhp9Ksb6Fy6pLMZgRBTS1yR0ZHbBN0VLXWJFoC3K5f7Usq5jPMkRgzMEn1A_vBgq4A6cw74DlO-zouf6tJGrY7Ox1oE_TG2nFXqjZgqi_dzi-4AsHgAQ7qrLDIUwJmSYvcf2g3zmqatI3GzZ7e3sIAQ2Ux5jTjAn02JqilFQWS0e-agrC_pGdqsFdZybO_nYmALQHTfOUQYennPhCVLXEwZY0wtfGV_Q8JoWPAzH9Vlx6qWhxxK5sRwtQR9JvIa1QYhpkZPgT3tWi1wsnJmQjt-z2Nu03t9g=w1391-h928-s-no-gm?authuser=0',
+  'https://lh3.googleusercontent.com/pw/ABLVV86d2s2JZWN6d74KViI968NoiCSfqeLj5uhP_TiYTj3GQC4xcZMFMn50JVsxiQPCtI9c77NSezpNkJACYdLhUJxILNjpOGKp53Ol6PeDf8SqOXuZVBLW70Mf35Adh7LPKwkeTX5MoaQ7lvGrlNulzcn0EVhrQjoq9drvydV3JRqordDLzAwjC4Xwcu6Hfnx-RNY7t69k8e_WSBr37hAZtt_yQuHYAMhdCH4ZXRiCO1d9H0Y821VtQEYMvQgPOZi_CMKQ8auf5v0fae8Y5GhWKHxUlxjB0IGqEQjbfmNMTd5fo9ynOOHvLlYWgH4qIbixTPJbBPpFNR_xRYgAQhMJP4GDfptclPog-Mb27mf0KElgwd0EuujB5bXTsln8r2jSu50vGtTMnMMdyy_1qxH0CzfvpD1k2qekGjbyU7BVETSQl4euZpWrCvlcUxwUyNZHvLyxIRVDv0d1cOuy04Ys-ibiHZW5FwY2rhDsO8112voacFryVJeIZsCWPItXbpRVRLqUd4m-74UXePi0H6De1duNF-rn9KLOkF18BaA-i2Xkcxq0TFk7NdibyKWTf12QCN5fseZpMOKJ5OEow-43MXVuwI8tGRBVvkkPCttqobPsqY6u158wU0TPSYJHH7L1jr5B-r8FurZj1m1MvAfaZP1K9B5NJ2W9WcUBo-QSXpkORstjPuYVqkSfMsy_xk1VwjtbWW5rfMlUkr4KIvaCXR4Zzwe9hgbWfzf1I0jdUhL6NRLzRhrIW0Yr1nslhHoO4gis57fjL_w2jOGRLAKlAzOcerFR2KS6eYHWpuvPNfh3vb9P1Va0N6bDfXvIXXvQlfzPTVpAXvnbxZeaAn5F-QgwTdF0Uy1d6MBO3XrHPCb7Vc24RUsUOwRoxXxScNTP9GFhXOqaet0wdxKIoIcK6ca7jc4=w1391-h928-s-no-gm?authuser=0',
+  'https://lh3.googleusercontent.com/pw/ABLVV86vf7PggEKbSe2O4-SPeq3vhcegfDmaRS04Ie4JGA8qR97AXstkGeKS2BV9l7gwLu-Z-3hIQl9w9OsLlpy9tN4tNlkzn2xS2ERQwPqLU27yf3Ve3CdjR3RlzF3UVsUKbwtANP7Z46pEAuOThWgq7VTdLxuTM-Uhnfwoim-h_x9h62bBpHH_LZdPO29Enrax9T4SKbQhc9khvEVG3LFQnWAnRywRUWBHQirU4gImS5e9NpFyF127jTlo0G_QglHS7Q5R5nZ4vqI5_4H0CI0QLQ9wn7OWJHoYm4G0bwbvyPLD8OO_EXFai6hBxg52ddOEhS_mEz57s_sUVCA_ebzjPvh6DtOjCLTlf7H1onJMBq3ST7fX-uhzzDJ2onv60d4H0bA2tkXRcinLnN4C4TeVMDZV-guYYpPiHTjYQnShwrK-1vfgoD2HLcd8aAVsc8a1dbLfNo4Y8arCUr2ttILwtRfYpR01H8hB_wev7unHJ4B-YYbqsJIhbPBPxGn1PQ46UrZiVeoLq46uTNDlqTQziOhzqyRajC5A1nhZEakCk2CR9CW_2NpKlfuWUwqrnz5wvU_Wa0G19VIVpyKmP6WkRt1v0eUT0xusdrnYqXgrGq8-6x9eJ0NXg_X7I97CT0hsh92N2Sxz9uapJ7Q56pfPMTd08lYXi-XIqA1-9LYZXf1piQJbPJIsBtrfgF6gN5gmSor9AESdfk85Ng6bN8ovLWx7wv8ggLnIuH0Uwi0ssITAv7GGJ50ucPhlE7fZNncLkPF25_UJQA4PnmIPtkxSetbv2Gz0pcS6l_tixpBhSwrXnKCpYKp6Lrh_G-_fo1IVnLdMaGSVYqk5uo0iQzlM-Z57eq8Xr5teVboVSI2YxVF_fOEI9g6oq__TZuXnSYRosBqO0BfMESK46V0MIWNmpgzxO7g=w800-h520-s-no-gm?authuser=0',
+];
+
+const imageDetails = [
+  {
+    title: 'MULTIPLY YOUR POINTS',
+  },
+  {
+    title: 'GET AWAY & SAVE MORE',
+  },
+  {
+    title: 'EARN UP TO 130K POINTS',
+  },
+  {
+    title: 'A NIGHT ON US',
+  },
+  {
+    title: '3 NIGHTS UNDER $250',
+  },
+  {
+    title: 'EARN UP TO 3X POINTS ON EVERY STAY',
+  },
+];
+
+const experience = () => {
+  return (
+    <div className='exp'>
+      <br />
+      <h1>Experience Something New</h1>
+      <p>Close to home or across the world,Leo is there for you with memorable offers and experiences.Check out what is new.</p>
+    <div className="card-slider">
+      {images.map((imageUrl, index) => (
+        <div key={index} className="card">
+          <img src={imageUrl} alt={`Image ${index + 1}`} />
+          <div className="image-details">
+            <h2>{imageDetails[index].title}</h2>
+          </div>
+        </div>
+      ))}
+    </div>
+    </div>
+  );
+};
+
+export default experience;

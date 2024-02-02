@@ -1,0 +1,118 @@
+.destination h1{
+    font-size: 60px;
+    color: #FF5A00;
+    text-align: center;
+  }
+ 
+  .dropdown-container {
+    position: relative;
+    width: 100%;
+  }
+  .centered-dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+  .dropdown-header {
+    padding: 10px;
+    justify-content: center;
+    width: 200px;
+    cursor: pointer;
+    border: 1px solid #FF5A00;
+    background-color: #2F4858;
+    color: #FF5A00;
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    border: solid #FF5A00;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transition: transform 0.3s ease;
+  }
+  
+  .arrow.open {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  
+  .dropdown-menu {
+    list-style: none;
+    padding: 0;
+    width: 20%;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #FF5A00;
+    background-color: #BDA79E;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid #FF5A00;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  .dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #FF5A00;
+    position: relative;
+  }
+  
+  .dropdown-menu li:last-child {
+    border-bottom: none;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #ffff;
+    color: #FF5A00;
+  }
+  
+  .submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 110%;
+    transform: translateX(-40%);
+    color: #FF5A00;
+    background-color: #BDA79E;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid #FF5A00;
+    border-radius: 5px;
+    display: none;
+  }
+  
+  .dropdown-menu li:hover .submenu {
+    display: block;
+  }
+  
+  .subsubmenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 400px;
+    position: absolute;
+    top: 0;
+    left: 150%;
+    transform: translateX(-10%);
+    color: #FF5A00;
+    background-color: #BDA79E;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid #FF5A00;
+    border-radius: 5px;
+    display: none;
+  }
+  
+  .submenu li:hover .subsubmenu {
+    display: block;
+  }

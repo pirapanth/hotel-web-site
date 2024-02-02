@@ -1,0 +1,84 @@
+.offer-section {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    top:20px;
+  }
+  
+  .offer-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .offer-card {
+    text-align: center;
+    width: calc(30% - 20px);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    border-style: solid;
+    border-color: #FF5A00;
+    height: 600px;
+    border-radius: 15px;
+  }
+  
+  .offer-card img {
+    border-radius: 12px 12px 0px  0px;
+    width: 100%;
+    height: auto;
+
+  }
+  
+  .offer-details {
+    margin-top: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  .more-button {
+    text-align: center;
+  }
+  
+  .more-button button {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #FF5A00;
+    border-style: solid;
+    border-color: #FF5A00;
+    background-color: #2F4858;
+    border-radius: 5px;
+    cursor: pointer;
+    top: 70px;
+
+  }
+
+  .offer-head h1{
+    font-size: 60px;
+    color: #FF5A00;
+    text-align: center;
+  }
+  .offer-details h2{
+    font-size: 24px;
+    color: #FF5A00;
+    font-family:'Times New Roman', Times, serif;
+
+
+  }
+  .offer-details p{
+    font-size: 14px;
+    color: #BDA79E;
+
+
+  }
+  .view-a a{
+    display: flex;
+    position: relative;
+    color: #FF5A00;
+    font-size: 20px;
+    top: 30px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
